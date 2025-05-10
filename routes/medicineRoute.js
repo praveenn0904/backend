@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Medicine = require('../models/medicineModel'); // Adjust path as needed
-const invoiceModel = require('../models/invoiceModel');
+const Invoice = require('../models/invoiceModel');
 
 // Add new medicine
 router.post('/add', async (req, res) => {
