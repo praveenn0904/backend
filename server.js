@@ -15,7 +15,9 @@ app.use(express.json());
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,  // Timeout after 5 seconds
+  socketTimeoutMS: 45000  // Timeout for the socket to be idle (in ms)
 })
 .then(() => console.log('✅ MongoDB connected successfully'))
 .catch((err) => console.error('❌ MongoDB connection error:', err));
@@ -23,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 const signupRoute = require('./routes/signupRoute');
 const loginRoute = require('./routes/loginRoute');
-const medicineRoute = require('./routes/medicineRoute'); // <- Your medicine logic here
+const medicineRoute = require('./routes/medicineRoute');
 const dashboardRoute = require('./routes/dashboardRoute');
 const resetPasswordRoute = require('./routes/resetpasswordRoute');
 const billingRoute = require('./routes/invoiceRoute');

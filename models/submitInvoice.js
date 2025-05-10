@@ -12,7 +12,7 @@ const submitInvoice = async () => {
     };
   
     try {
-      const res = await fetch("http://localhost:5000/api/invoices", {
+      const res = await fetch("https://backend-gbe5.onrender.com/api/invoices", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
