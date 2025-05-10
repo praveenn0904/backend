@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // Adjust path if needed
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // POST /api/reset-password
 router.post('/', async (req, res) => {
